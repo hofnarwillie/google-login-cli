@@ -1,0 +1,36 @@
+{
+  "name": "google-login-cli",
+  "version": "1.0.0",
+  "description": "A CLI tool to verify Google credentials",
+  "main": "./bin/google-login",
+  "scripts": {
+    "test": "npm run test:lint && npm run test:unit",
+    "test:unit": "mocha './test/**/*.test.js'",
+    "test:lint": "eslint './src/**/*.js' './test/**/*.js' './bin/google-login'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hofnarwillie/google-login-cli.git"
+  },
+  "author": "Willem Le Roux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hofnarwillie/google-login-cli/issues"
+  },
+  "homepage": "https://github.com/hofnarwillie/google-login-cli#readme",
+  "dependencies": {
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "mocha": "^8.0.1"
+  }
+}

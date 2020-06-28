@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const yargs = require('yargs');
+const googleLogin = require('../src/index');
+
+const { argv } = yargs
+  .option('user', {
+    alias: 'u',
+    type: 'string',
+    description: 'The Google credential email address',
+  })
+  .option('password', {
+    alias: 'p',
+    type: 'string',
+    description: 'The Google credential password',
+  });
+
+googleLogin(argv)
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  })
+  .then(process.exit.bind(null, 0));
